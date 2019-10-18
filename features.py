@@ -1,4 +1,4 @@
-"""Functions for generating image features related to lumination"
+"""Functions for generating image features related to lumination"""
 
 __author__ = "Victor Mawusi Ayi"
 
