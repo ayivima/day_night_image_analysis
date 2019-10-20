@@ -22,7 +22,7 @@ from features import (
 )
 
 
-class dataset:
+class Dataset:
     
     def __init__(
         self,
