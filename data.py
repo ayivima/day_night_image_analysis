@@ -11,6 +11,16 @@ import random
 
 import matplotlib.image as mpimg
 import numpy as np
+from pandas import DataFrame
+
+from features import (
+    contrast,
+    lightness,
+    luminance,
+    supracontrast,
+    supralightness,
+    supraluminance
+)
 
 
 class dataset:
@@ -29,8 +39,9 @@ class dataset:
         self.superdir = superdir
         
         self.__load__()
+        self.setsplit()
         
-    def __getdata__(indices):
+    def __getdata__(self, indices):
         
         data = [self.data[x] for x in indices]
         labels = [self.labels[x] for x in indices]
@@ -39,8 +50,8 @@ class dataset:
                     
     def __load__(self):
         
-        get_files = lambda x, y: glob(
-            path.join(x, y, "*")
+        get_files = lambda x, y: glob.glob(
+            os.path.join(x, y, "*")
         )
         
         data_size = 0
@@ -51,18 +62,20 @@ class dataset:
                 self.classes[label]
             ):
                 self.data.append(
-                    resize(
+                    cv2.resize(
                         mpimg.imread(file),
                         self.image_size
                     )
                 )
                 self.labels.append(label)
-    
-    def datasplit(self,  trainratio=0.7):
+                
         self.datasize = len(self.data)
-        self.traincount = int(self.datasize * trainratio)
         self.indices = list(range(self.datasize))
         random.shuffle(self.indices)
+    
+    def setsplit(self,  trainratio=0.7):
+        
+        self.traincount = int(self.datasize * trainratio)
     
     def traindata(self):
         
@@ -74,7 +87,7 @@ class dataset:
 
         else:
             indices = self.indices[:self.traincount]            
-            return __getdata__(indices)
+            return self.__getdata__(indices)
         
     def testdata(self):
         
@@ -83,7 +96,46 @@ class dataset:
                 "Cannot retrieve test data from "
                 "an empty dataset."
             )
-
         else:
             indices = self.indices[self.traincount:]
-            return __getdata__(indices) 
+            return self.__getdata__(indices)
+    
+    def featureset(
+        self,
+        settype="all",
+        as_df=True,
+        divisors=(3, 3, 4)
+    ):
+        
+        s_c, s_li, s_lu = divisors 
+        
+        fvector = lambda x: (
+            contrast(x),
+            lightness(x),
+            luminance(x),
+            supracontrast(x, s_c),
+            supralightness(x, s_li),
+            supraluminance(x, s_lu)
+        )
+        
+        if settype=="all":
+            data, labels = self.data, self.labels
+        elif settype=="train":
+            data, labels = self.traindata()
+        elif settype=="test":
+            data, labels = self.testdata()
+        
+        fset = [fvector(imgdata) for imgdata in data]
+        
+        if as_df:
+            fset = DataFrame(fset)
+            fset.columns = (
+                "contrast",
+                "lightness",
+                "luminance",
+                "supracontrast",
+                "supralightness",
+                "supraluminance"
+            )
+
+        return fset, labels
