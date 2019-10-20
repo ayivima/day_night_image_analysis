@@ -1,10 +1,7 @@
 
 
-from cv2 import resize
 import matplotlib.image as mpimg
-from numpy import array
-from pandas import DataFrame
-
+from cv2 import resize
 from features import (
     contrast,
     lightness,
@@ -38,20 +35,36 @@ class Model:
         self.testset = testset
         self.features = features
         self.classes = classes
-        self.traintest = False
+        self.accuracy = 0
+        self.istrained = False
         
     
     def train(self):
         features, labels = self.trainset
-        self.classifier.fit(features, labels)
-    
-    def test(self):
-        features, labels = self.testset
-        predictions = self.classifier.predict(features)
+        self.classifier.fit(features[self.features], labels)
+        self.istrained = True
         
-        return testreport(labels, predictions)
+        return self.test()
+    
+    def test(self, testset=None):
+        if testset==None:
+            testset=self.testset
+
+        features, labels = testset
+        predictions = self.classifier.predict(
+            features[self.features]
+        )
+        
+        report = testreport(labels, predictions)
+        self.accuracy = report[0]
+        
+        return report
     
     def predict(self, rgb_image):
+        
+        if self.istrained == False:
+            raise ValueError("Model is not trained yet")
+
         featurevector=[]
         image = resize(rgb_image, image_size)
         
@@ -61,13 +74,11 @@ class Model:
                 featurizer(rgb_image)
             )
         
-        featurevector = array([featurevector])
-        print(featurevector)
-        
-        prediction = self.classifier.predict(featurevector)
+        prediction = self.classifier.predict([featurevector])
         prediction = self.classes[prediction[0]]
         
         return prediction
+        
         
 
 def testreport(
