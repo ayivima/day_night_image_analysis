@@ -10,7 +10,6 @@ from os import path
 import random
 
 import matplotlib.image as mpimg
-import numpy as np
 from pandas import DataFrame
 
 from features import (
@@ -50,8 +49,8 @@ class dataset:
                     
     def __load__(self):
         
-        get_files = lambda x, y: glob.glob(
-            os.path.join(x, y, "*")
+        get_files = lambda x, y: glob(
+            path.join(x, y, "*")
         )
         
         data_size = 0
@@ -62,7 +61,7 @@ class dataset:
                 self.classes[label]
             ):
                 self.data.append(
-                    cv2.resize(
+                    resize(
                         mpimg.imread(file),
                         self.image_size
                     )
@@ -73,7 +72,7 @@ class dataset:
         self.indices = list(range(self.datasize))
         random.shuffle(self.indices)
     
-    def setsplit(self,  trainratio=0.7):
+    def setsplit(self, trainratio=0.7):
         
         self.traincount = int(self.datasize * trainratio)
     
@@ -84,7 +83,6 @@ class dataset:
                 "Cannot retrieve training data from "
                 "an empty dataset."
             )
-
         else:
             indices = self.indices[:self.traincount]            
             return self.__getdata__(indices)
