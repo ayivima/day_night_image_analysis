@@ -21,41 +21,38 @@ featurizers = {
 }
 
 class Model:
+
     def __init__(
         self,
         classifier,
-        trainset,
-        testset,
-        features,
         classes,
-        image_size
+        image_size,
+        features=list(featurizers.keys()),
+        accuracy=0,
+        istrained=False
     ):
         self.classifier = classifier
-        self.trainset = trainset
-        self.testset = testset
         self.features = features
         self.classes = classes
         self.accuracy = 0
-        self.istrained = False
-        
-    
-    def train(self):
-        features, labels = self.trainset
+        self.istrained = istrained
+
+    def train(self, trainset):
+        features, labels = trainset
         self.classifier.fit(features[self.features], labels)
         self.istrained = True
-        
-        return self.test()
     
-    def test(self, testset=None):
-        if testset==None:
-            testset=self.testset
+    def test(self, testset):
+        
+        if self.istrained == False:
+            raise ValueError("Model is not trained yet")
 
         features, labels = testset
         predictions = self.classifier.predict(
             features[self.features]
         )
         
-        report = testreport(labels, predictions)
+        report = testreport(labels, predictions, (0, 1))
         self.accuracy = report[0]
         
         return report
@@ -78,13 +75,13 @@ class Model:
         prediction = self.classes[prediction[0]]
         
         return prediction
-        
-        
+
+
 
 def testreport(
     actual_labels,
     predictions,
-    classes_=(0, 1)
+    classes_
 ):
     exp_label_count = {x:0 for x in classes_}
     pred_label_count = {x:0 for x in classes_}
