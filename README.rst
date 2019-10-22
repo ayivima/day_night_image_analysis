@@ -34,16 +34,6 @@ Contrast and Luminance
 
 Sample Predictions
 ^^^^^^^^^^^^^^^^^^
-.. code-block:: python
-
-   predict("images/test10.jpg")
-
-MODEL PREDICTIONS:
-NearestCentroid->night, LogisticRegression->day, K Nearest Neighbors->night
-
-.. image:: model_notebook/output_28_1.png
-
-
 
 .. code-block:: python
 
@@ -64,5 +54,16 @@ MODEL PREDICTIONS:
 NearestCentroid->day, LogisticRegression->day, K Nearest Neighbors->day
 
 .. image:: model_notebook/output_30_1.png
+
+
+.. code-block:: python
+
+   predict("images/test10.jpg")
+
+MODEL PREDICTIONS:
+NearestCentroid->night, LogisticRegression->day, K Nearest Neighbors->night
+
+.. image:: model_notebook/output_28_1.png
+
 
 
