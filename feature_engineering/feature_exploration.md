@@ -475,12 +475,6 @@ fsep(traindf2, ["supralightness", "supracontrast"], sep_coords)
 ![png](output_44_0.png)
 
 
-## Takeaways
-
-Contrast, Luminance, Supracontrast, Supraluminance represent four features to use for classification. 
-
-Luminance and Lightness are highly correlated and both do not need to be added. Likewise supraluminance and supralightness.
-
 
 ```python
 
