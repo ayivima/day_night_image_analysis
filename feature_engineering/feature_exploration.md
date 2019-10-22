@@ -1,5 +1,5 @@
 
-# FEATURE ENGINEERING
+# FEATURE EXPLORATION
 
 Victor Mawusi Ayi
 
