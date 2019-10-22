@@ -32,8 +32,8 @@ Contrast and Luminance
 .. image:: feature_engineering/output_16_0.png
 
 
-Sample Predictions
-^^^^^^^^^^^^^^^^^^
+Sample Predictions (Find out more about modelling and predictions `here <https://github.com/ayivima/day_night_image_analysis/blob/master/model_notebook/modelling_and_prediction.md/>`_)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: python
 
