@@ -20,23 +20,39 @@ Box Plots for Feature Distribution of Training Images
 .. image:: feature_engineering/output_11_0.png
 
 
-Image Clusters and Separation based on Contrast and Supraluminance. (Find out more about features `here <https://github.com/ayivima/day_night_image_analysis/blob/master/feature_engineering/feature_exploration.md/>`_)
+Image Clusters and Separation based on (Find out more about features `here <https://github.com/ayivima/day_night_image_analysis/blob/master/feature_engineering/feature_exploration.md/>`_)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Contrast and Supraluminance
+
 .. image:: feature_engineering/output_22_0.png
+
+Contrast and Luminance
+
+.. image:: feature_engineering/output_16_0.png
 
 
 Sample Predictions
 ^^^^^^^^^^^^^^^^^^
 
-.. image:: model_notebook/output_21_1.png
+.. code-block:: python
+
+   predict("images/test3.jpg")
 
 MODEL PREDICTIONS:
-NearestCentroid->night, LogisticRegression->night, K Nearest Neighbors->night
+NearestCentroid - night, LogisticRegression - night, K Nearest Neighbors - night
+
+.. image:: model_notebook/output_21_1.png
 
 
-.. image:: model_notebook/output_30_1.png
+
+.. code-block:: python
+
+   predict("images/test12.jpg")
 
 MODEL PREDICTIONS:
 NearestCentroid->day, LogisticRegression->day, K Nearest Neighbors->day
+
+.. image:: model_notebook/output_30_1.png
+
 
