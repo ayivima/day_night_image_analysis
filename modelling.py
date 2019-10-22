@@ -26,7 +26,7 @@ class Model:
         self,
         classifier,
         classes,
-        image_size,
+        imagesize,
         features=list(featurizers.keys()),
         accuracy=0,
         istrained=False
@@ -34,6 +34,7 @@ class Model:
         self.classifier = classifier
         self.features = features
         self.classes = classes
+        self.imagesize=imagesize
         self.accuracy = 0
         self.istrained = istrained
 
@@ -63,7 +64,7 @@ class Model:
             raise ValueError("Model is not trained yet")
 
         featurevector=[]
-        image = resize(rgb_image, image_size)
+        image = resize(rgb_image, self.imagesize)
         
         for feature in self.features:
             featurizer = featurizers.get(feature)
