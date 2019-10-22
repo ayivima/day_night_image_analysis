@@ -79,6 +79,7 @@ def modeller(classifier):
 ncent = modeller(NearestCentroid())
 ```
 
+    OUTPUT:
     Overall Accuracy -> 99.38%
     
     Class Accuracies:
@@ -94,12 +95,9 @@ print(ncent.predict(misfit))
 plt.imshow(misfit)
 ```
 
+    OUTPUT
     night
-
-
-
-
-
+    
     <matplotlib.image.AxesImage at 0x7f1760464b38>
 
 
@@ -115,6 +113,7 @@ plt.imshow(misfit)
 logreg = modeller(LogisticRegression(max_iter=6, intercept_scaling=18))
 ```
 
+    OUTPUT:
     Overall Accuracy -> 97.52%
     
     Class Accuracies:
@@ -130,11 +129,8 @@ print(logreg.predict(misfit))
 plt.imshow(misfit)
 ```
 
+    OUTPUT:
     day
-
-
-
-
 
     <matplotlib.image.AxesImage at 0x7f175ec020f0>
 
@@ -151,6 +147,7 @@ plt.imshow(misfit)
 knn = modeller(KNeighborsClassifier())
 ```
 
+    OUTPUT:
     Overall Accuracy -> 100.0%
     
     Class Accuracies:
@@ -166,11 +163,8 @@ print(knn.predict(misfit))
 plt.imshow(misfit)
 ```
 
+    OUTPUT:
     night
-
-
-
-
 
     <matplotlib.image.AxesImage at 0x7f175eb6a128>
 
@@ -200,6 +194,7 @@ def predict(imageurl):
 predict("images/test1.jpeg")
 ```
 
+    MODEL PREDICTIONS:
     NearestCentroid->night, LogisticRegression->night, K Nearest Neighbors->night
 
 
@@ -212,6 +207,7 @@ predict("images/test1.jpeg")
 predict("images/test1.jpg")
 ```
 
+    MODEL PREDICTIONS:
     NearestCentroid->day, LogisticRegression->night, K Nearest Neighbors->day
 
 
@@ -224,6 +220,7 @@ predict("images/test1.jpg")
 predict("images/test2.jpg")
 ```
 
+    MODEL PREDICTIONS:
     NearestCentroid->night, LogisticRegression->night, K Nearest Neighbors->night
 
 
@@ -236,6 +233,7 @@ predict("images/test2.jpg")
 predict("images/test3.jpg")
 ```
 
+    MODEL PREDICTIONS:
     NearestCentroid->night, LogisticRegression->night, K Nearest Neighbors->night
 
 
@@ -248,6 +246,7 @@ predict("images/test3.jpg")
 predict("images/test4.jpg")
 ```
 
+    MODEL PREDICTIONS:
     NearestCentroid->day, LogisticRegression->day, K Nearest Neighbors->day
 
 
@@ -260,6 +259,7 @@ predict("images/test4.jpg")
 predict("images/test5.jpg")
 ```
 
+    MODEL PREDICTIONS:
     NearestCentroid->night, LogisticRegression->night, K Nearest Neighbors->night
 
 
@@ -272,6 +272,7 @@ predict("images/test5.jpg")
 predict("images/test6.jpg")
 ```
 
+    MODEL PREDICTIONS:
     NearestCentroid->night, LogisticRegression->night, K Nearest Neighbors->night
 
 
@@ -284,6 +285,7 @@ predict("images/test6.jpg")
 predict("images/test7.jpg")
 ```
 
+    MODEL PREDICTIONS:
     NearestCentroid->day, LogisticRegression->day, K Nearest Neighbors->day
 
 
@@ -296,6 +298,7 @@ predict("images/test7.jpg")
 predict("images/test8.jpg")
 ```
 
+    MODEL PREDICTIONS:
     NearestCentroid->day, LogisticRegression->day, K Nearest Neighbors->day
 
 
@@ -308,6 +311,7 @@ predict("images/test8.jpg")
 predict("images/test9.jpg")
 ```
 
+    MODEL PREDICTIONS:
     NearestCentroid->day, LogisticRegression->night, K Nearest Neighbors->day
 
 
@@ -320,6 +324,7 @@ predict("images/test9.jpg")
 predict("images/test10.jpg")
 ```
 
+    MODEL PREDICTIONS:
     NearestCentroid->night, LogisticRegression->day, K Nearest Neighbors->night
 
 
@@ -332,6 +337,7 @@ predict("images/test10.jpg")
 predict("images/test11.jpg")
 ```
 
+    MODEL PREDICTIONS:
     NearestCentroid->day, LogisticRegression->day, K Nearest Neighbors->day
 
 
@@ -344,6 +350,7 @@ predict("images/test11.jpg")
 predict("images/test12.jpg")
 ```
 
+    MODEL PREDICTIONS:
     NearestCentroid->day, LogisticRegression->night, K Nearest Neighbors->day
 
 
@@ -356,6 +363,7 @@ predict("images/test12.jpg")
 predict("images/test13.jpg")
 ```
 
+    MODEL PREDICTIONS:
     NearestCentroid->day, LogisticRegression->day, K Nearest Neighbors->day
 
 
@@ -368,6 +376,7 @@ predict("images/test13.jpg")
 predict("images/test14.jpg")
 ```
 
+    MODEL PREDICTIONS:
     NearestCentroid->day, LogisticRegression->day, K Nearest Neighbors->day
 
 
