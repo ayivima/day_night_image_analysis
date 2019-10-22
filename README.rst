@@ -4,7 +4,6 @@ DAY AND NIGHT IMAGE ANALYSIS & PREDICTION
 
 OVERVIEW
 ========
-Find out more:
 
 `Exploring Features <https://github.com/ayivima/day_night_image_analysis/blob/master/feature_engineering/feature_exploration.md/>`_
 
