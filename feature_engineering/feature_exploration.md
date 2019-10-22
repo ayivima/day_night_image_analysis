@@ -6,9 +6,6 @@ Victor Mawusi Ayi
 
 ```python
 import matplotlib.pyplot as plt
-from sklearn.linear_model import LogisticRegression
-from sklearn.neighbors import KNeighborsClassifier
-from sklearn.neighbors.nearest_centroid import NearestCentroid
 
 from data import Dataset
 from features import (
@@ -19,7 +16,6 @@ from features import (
     supralightness,
     supraluminance
 )
-from modelling import Model
 from visualize import fsep
 
 ```
@@ -54,19 +50,6 @@ traindf.describe()
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -169,19 +152,6 @@ testdf.describe()
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -316,7 +286,7 @@ For separating features, the features extracted from the superior portions of im
 Visualizing day and night image clusters in 2D space defined by selected features.
 
 Features:
-- Contrast - Z-score of image intensities after transformation to grayscale.
+- Contrast - Standard deviation of image intensities after transformation to grayscale.
 - Luminance - Relative luminance calculated on the average of intensities for each RGB channel
 - Lightness - Average value for the lightness channel of images transformed into HSL color space
 - Supra-Contrast - Contrast calculated for superior portion of an image
