@@ -121,7 +121,7 @@ class Dataset:
         )
         
         if settype=="all":
-            data, labels = self.data, self.labels
+            data, labels = self.__getdata__(self.indices)
         elif settype=="train":
             data, labels = self.traindata()
         elif settype=="test":
