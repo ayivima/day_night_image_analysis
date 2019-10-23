@@ -1,4 +1,6 @@
+"""Model Class and Test Report Generation Function"""
 
+__author__ = "Victor Mawusi Ayi"
 
 import matplotlib.image as mpimg
 from cv2 import resize
