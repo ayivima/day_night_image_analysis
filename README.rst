@@ -19,7 +19,7 @@ Box Plots for Feature Distribution of Training Images
 .. image:: feature_engineering/output_11_0.png
 
 
-Image Clusters and Separation based on (Find out more about features `here <https://github.com/ayivima/day_night_image_analysis/blob/master/feature_engineering/feature_exploration.md/>`_)
+Image Clusters and Separation based on features (Find out more about features `here <https://github.com/ayivima/day_night_image_analysis/blob/master/feature_engineering/feature_exploration.md/>`_)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Contrast and Supraluminance
