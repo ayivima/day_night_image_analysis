@@ -75,6 +75,10 @@ class Dataset:
     def setsplit(self, trainratio=0.7):
         
         self.traincount = int(self.datasize * trainratio)
+        
+    def shuffle(self):
+    
+        random.shuffle(self.indices)
     
     def traindata(self):
         
