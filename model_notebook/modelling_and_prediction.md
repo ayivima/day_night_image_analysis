@@ -1,5 +1,5 @@
 
-# MODELLING AND PREDICTION USING LUMINANCE, CONTRAST, SUPERIOR LUMINANCE AND SUPERIOR CONTRAST
+# MODELLING AND PREDICTION USING LUMINANCE, CONTRAST, SUPERIOR LUMINANCE, AND SUPERIOR CONTRAST.
 
 Victor Mawusi Ayi
 
@@ -182,18 +182,25 @@ showmisfit(25, gnb)
 dtc = modeller(DecisionTreeClassifier())
 ```
 
-    Overall Accuracy -> 99.38%
+    Overall Accuracy -> 100.0%
     
     Class Accuracies:
-    Class 0: 79/80 --> 98.75%
+    Class 0: 80/80 --> 100.0%
     Class 1: 81/81 --> 100.0%
-    Indexes of wrongly classified images: (9,)
+    Indexes of wrongly classified images: ()
 
 
 
 ```python
-
+showmisfit(9, dtc)
 ```
+
+    night
+
+
+
+![png](output_20_1.png)
+
 
 # Using Support Vector Machines
 
