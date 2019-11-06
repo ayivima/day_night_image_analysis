@@ -39,7 +39,8 @@ Sample Predictions (Find out more about modelling and predictions `here <https:/
    predict("images/test3.jpg")
 
 MODEL PREDICTIONS:
-NearestCentroid->night, LogisticRegression->night, K Nearest Neighbors->night
+Naive_Bayes->night, NearestCentroid->night, LogisticRegression->night, 
+K NearestNeighbors->night, DecisionTree->night, SupportVectorMachine->night
 
 .. image:: model_notebook/output_21_1.png
 
@@ -50,9 +51,10 @@ NearestCentroid->night, LogisticRegression->night, K Nearest Neighbors->night
    predict("images/test12.jpg")
 
 MODEL PREDICTIONS:
-NearestCentroid->day, LogisticRegression->day, K Nearest Neighbors->day
+Naive_Bayes->day, NearestCentroid->day, LogisticRegression->night, 
+K NearestNeighbors->day, DecisionTree->day, SupportVectorMachine->day
 
-.. image:: model_notebook/output_30_1.png
+.. image:: model_notebook/output_37_1.png
 
 
 .. code-block:: python
@@ -60,9 +62,12 @@ NearestCentroid->day, LogisticRegression->day, K Nearest Neighbors->day
    predict("images/test10.jpg")
 
 MODEL PREDICTIONS:
-NearestCentroid->night, LogisticRegression->day, K Nearest Neighbors->night
+Naive_Bayes->night, NearestCentroid->night, LogisticRegression->night, 
+K NearestNeighbors->night, DecisionTree->night, SupportVectorMachine->night
 
-.. image:: model_notebook/output_28_1.png
+** This image qualifies for an adversarial example.
+
+.. image:: model_notebook/output_35_1.png
 
 
 
