@@ -7,8 +7,9 @@ OVERVIEW
 
 `Exploring Features <https://github.com/ayivima/day_night_image_analysis/blob/master/feature_engineering/feature_exploration.md/>`_
 
-`Modelling and Prediction Overview <https://github.com/ayivima/day_night_image_analysis/blob/master/model_notebook/modelling_and_prediction.md/>`_
+`Modelling and Prediction using estimations of Luminance, Contrast, SupraContrast, and Supra Luminance. <https://github.com/ayivima/day_night_image_analysis/blob/master/model_notebook/modelling_and_prediction.md/>`_
 
+`Modelling and Prediction using estimations of Contrast and Supra Luminance. <https://github.com/ayivima/day_night_image_analysis/blob/master/model_notebook/modelling_and_prediction2.md/>`_
 
 HIGHLIGHTS
 ==========
