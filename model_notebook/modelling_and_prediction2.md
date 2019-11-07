@@ -1,5 +1,5 @@
 
-# MODELLING AND PREDICTION USING LUMINANCE, CONTRAST, SUPERIOR LUMINANCE AND SUPERIOR CONTRAST
+# MODELLING AND PREDICTION USING CONTRAST, AND SUPERIOR LUMINANCE.
 
 Victor Mawusi Ayi
 
@@ -48,8 +48,6 @@ testfs = testdata.featureset()
 features = [
     "contrast",
     "supraluminance",
-    "supracontrast",
-    "luminance"
 ]
 classes = traindata.classes
 ```
@@ -113,12 +111,12 @@ showmisfit(114, ncent)
 logreg = modeller(LogisticRegression())
 ```
 
-    Overall Accuracy -> 96.89%
+    Overall Accuracy -> 96.27%
     
     Class Accuracies:
-    Class 0: 80/80 --> 100.0%
-    Class 1: 76/81 --> 93.83%
-    Indexes of wrongly classified images: (123, 129, 143, 145, 150)
+    Class 0: 78/80 --> 97.5%
+    Class 1: 77/81 --> 95.06%
+    Indexes of wrongly classified images: (9, 54, 123, 129, 143, 150)
 
 
 
@@ -182,12 +180,12 @@ showmisfit(25, gnb)
 dtc = modeller(DecisionTreeClassifier())
 ```
 
-    Overall Accuracy -> 99.38%
+    Overall Accuracy -> 100.0%
     
     Class Accuracies:
-    Class 0: 79/80 --> 98.75%
+    Class 0: 80/80 --> 100.0%
     Class 1: 81/81 --> 100.0%
-    Indexes of wrongly classified images: (9,)
+    Indexes of wrongly classified images: ()
 
 
 
@@ -329,7 +327,7 @@ modeltest("images/test6.jpg")
 modeltest("images/test7.jpg")
 ```
 
-    Naive_Bayes->day, NearestCentroid->day, LogisticRegression->night, 
+    Naive_Bayes->day, NearestCentroid->day, LogisticRegression->day, 
     K NearestNeighbors->day, DecisionTree->day, SupportVectorMachine->day
 
 
@@ -368,7 +366,7 @@ modeltest("images/test9.jpg")
 modeltest("images/test10.jpg")
 ```
 
-    Naive_Bayes->night, NearestCentroid->night, LogisticRegression->night, 
+    Naive_Bayes->night, NearestCentroid->night, LogisticRegression->day, 
     K NearestNeighbors->night, DecisionTree->night, SupportVectorMachine->night
 
 
@@ -381,7 +379,7 @@ modeltest("images/test10.jpg")
 modeltest("images/test11.jpg")
 ```
 
-    Naive_Bayes->day, NearestCentroid->day, LogisticRegression->night, 
+    Naive_Bayes->day, NearestCentroid->day, LogisticRegression->day, 
     K NearestNeighbors->day, DecisionTree->day, SupportVectorMachine->day
 
 
