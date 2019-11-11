@@ -47,7 +47,7 @@ testfs = testdata.featureset()
 
 Feature visualizations demonstrated a clean separation between day and night observations for the plot of contrast against supraluminance. That is good justification for modelling on just these two features. Notwithstanding, caution must be exercised in such circumstances, as the risk of overfitting may share an inverse relation with the number of features, within the limits where the curse of dimensionality is not yet a threat.
 
-![png](output_22_0.png)
+![png](/feature_engineering/output_22_0.png)
 
 ```python
 features = [
