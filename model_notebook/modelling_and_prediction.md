@@ -60,6 +60,7 @@ features = [
 classes = traindata.classes
 ```
 
+#### Setting up a custom model function
 
 ```python
 
