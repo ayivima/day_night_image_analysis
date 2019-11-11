@@ -43,6 +43,12 @@ testfs = testdata.featureset()
 
 # Models
 
+#### Feature Selection
+
+Feature visualizations demonstrated a high correlation between luminance and lightness. This necessitated experimentation, and comparison of results from excluding and including them. There wasn't a significant difference in model performance, if they were excluded or included. Consequently, excluding them was permissible and carried the advantage of efficiency as model computation got limited to fewer features.
+
+![png](/feature_engineering/output_20_0.png)
+
 
 ```python
 features = [
