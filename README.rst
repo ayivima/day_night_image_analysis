@@ -66,7 +66,7 @@ MODEL PREDICTIONS:
 Naive_Bayes->night, NearestCentroid->night, LogisticRegression->night, 
 K NearestNeighbors->night, DecisionTree->night, SupportVectorMachine->night
 
-** This image qualifies for an adversarial example.
+** This image qualifies for some sort of an adversarial example.
 
 .. image:: model_notebook/output_35_1.png
 
