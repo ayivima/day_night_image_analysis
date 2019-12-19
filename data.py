@@ -37,17 +37,17 @@ class Dataset:
         self.labels = []
         self.superdir = superdir
         
-        self.__load__()
+        self._load_()
         self.setsplit()
         
-    def __getdata__(self, indices):
+    def _getdata_(self, indices):
         
         data = [self.data[x] for x in indices]
         labels = [self.labels[x] for x in indices]
     
         return data, labels
                     
-    def __load__(self):
+    def _load_(self):
         
         get_files = lambda x, y: glob(
             path.join(x, y, "*")
@@ -89,7 +89,7 @@ class Dataset:
             )
         else:
             indices = self.indices[:self.traincount]            
-            return self.__getdata__(indices)
+            return self._getdata_(indices)
         
     def testdata(self):
         
@@ -100,7 +100,7 @@ class Dataset:
             )
         else:
             indices = self.indices[self.traincount:]
-            return self.__getdata__(indices)
+            return self._getdata_(indices)
     
     def featureset(
         self,
@@ -121,7 +121,7 @@ class Dataset:
         )
         
         if settype=="all":
-            data, labels = self.__getdata__(self.indices)
+            data, labels = self._getdata_(self.indices)
         elif settype=="train":
             data, labels = self.traindata()
         elif settype=="test":
